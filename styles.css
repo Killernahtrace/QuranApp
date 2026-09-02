@@ -1,0 +1,143 @@
+:root {
+  color-scheme: light dark;
+  --background: #f7f4e8;
+  --surface: #fffdf5;
+  --text: #173a32;
+  --muted: #567069;
+  --accent: #08634f;
+  --gold: #a88b45;
+  --border: #d9d2bc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #092f28;
+    --surface: #0d3a31;
+    --text: #fffbed;
+    --muted: #b8cbc4;
+    --accent: #93d2ba;
+    --gold: #d6bd78;
+    --border: #315a50;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+header,
+main,
+footer {
+  width: min(880px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+header {
+  padding-block: 32px 16px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+nav strong {
+  margin-right: auto;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+main {
+  padding-bottom: 48px;
+}
+
+.hero,
+.card {
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.hero {
+  padding: clamp(28px, 7vw, 64px);
+  margin-block: 24px;
+}
+
+.hero p {
+  max-width: 650px;
+  font-size: 1.15rem;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-block: 8px 12px;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1.05;
+}
+
+h2 {
+  margin-top: 36px;
+  line-height: 1.25;
+}
+
+h3 {
+  margin-bottom: 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--surface);
+  padding: 11px 18px;
+  text-decoration: none;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  padding-block: 24px 48px;
+}
+
+code {
+  overflow-wrap: anywhere;
+}
